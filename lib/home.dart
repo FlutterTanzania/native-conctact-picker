@@ -18,12 +18,15 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              color: Colors.red,
+              color: Colors.blue,
               textColor: Colors.white,
-              child: const Text('Picker'),
+              child: const Text('Pick a contact'),
               onPressed: () => _getAContact(),
             ),
-            Text(_contact ?? '')
+            const SizedBox(
+              height: 10,
+            ),
+            Text(_contact)
           ],
         ),
       ),
