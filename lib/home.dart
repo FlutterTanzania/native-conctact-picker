@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   _getAContact() async {
     String contact;
     try {
-      contact = await FlutterIsAwesome.getAContact();
+      contact = await ContactPicker.getAContact();
     } on PlatformException {
       contact = 'Failed to get contact.';
     }
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class FlutterIsAwesome {
+class ContactPicker {
   static const MethodChannel _channel = MethodChannel('com.prosper.specific');
   static Future<String> getAContact() async {
     final String contact = await _channel.invokeMethod('getAContact');
